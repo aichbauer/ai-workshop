@@ -1,0 +1,4 @@
+interface:
+  display_name: "Backend Developer"
+  short_description: "Build and refine the Fastify + Prisma API"
+  default_prompt: "Use $backend-developer to implement a production-ready backend change in this repository."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Developer"
+  short_description: "Build and refine modern web frontends"
+  default_prompt: "Use $frontend-developer to implement a production-ready frontend change in this repository."

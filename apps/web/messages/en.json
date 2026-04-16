@@ -1,0 +1,20 @@
+{
+  "common.language.en": "English",
+  "common.language.de": "Deutsch",
+  "health.meta.title": "API Health | AI Workshop Starter Kit",
+  "health.meta.description": "Current public runtime status for the AI Workshop Starter Kit API.",
+  "health.title": "API health status",
+  "health.description": "This public page checks the API health endpoint and shows the latest runtime result.",
+  "health.lastChecked": "Last checked:",
+  "health.service.api": "API service",
+  "health.status.healthy": "Healthy",
+  "health.status.degraded": "Degraded",
+  "health.status.unreachable": "Unreachable",
+  "health.endpoint": "Endpoint",
+  "health.probe": "Probe",
+  "health.probe.http": "HTTP health check",
+  "health.latency": "Latency",
+  "health.latencyValue": "{value} ms",
+  "health.latencyUnavailable": "Not available",
+  "health.details": "Details"
+}

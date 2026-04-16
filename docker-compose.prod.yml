@@ -1,0 +1,3 @@
+include:
+  - path: docker/docker-compose.prod.apps.yml
+  - path: docker/docker-compose.caddy.yml

@@ -1,0 +1,31 @@
+{
+  "name": "starter-kit",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.30.2",
+  "scripts": {
+    "preclean": "pnpm install",
+    "clean": "rimraf .pnpm-store && rimraf node_module && rimraf apps/api/node_modules && rimraf apps/web/node_modules && rimraf apps/web/.next",
+    "setup:dev": "pnpm clean && corepack enable && pnpm install",
+    "dev": "dotenv -e .env -- pnpm -r --parallel --if-present dev",
+    "build": "pnpm -r --if-present build",
+    "test:api:int:db:up": "docker compose --env-file .env.test -f docker/docker-compose.test.db.yml up -d --wait",
+    "test:api:int:db:down": "docker compose --env-file .env.test -f docker/docker-compose.test.db.yml down -v",
+    "test:api:int:db:reset": "pnpm test:api:int:db:down && pnpm test:api:int:db:up",
+    "test:api:int": "bash ./scripts/test-api-integration.sh",
+    "dev:web": "dotenv -e .env -- pnpm --filter web dev",
+    "dev:api": "dotenv -e .env -- pnpm --filter api dev",
+    "start": "dotenv -e .env -- pnpm --filter api start",
+    "test:web:unit": "pnpm --filter web test:unit",
+    "test:api:unit": "pnpm --filter api test:unit"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^17.3.1",
+    "dotenv-cli": "11.0.0",
+    "prisma": "^7.4.1",
+    "rimraf": "^6.1.3"
+  }
+}

@@ -1,0 +1,16 @@
+packages:
+  - apps/*
+
+ignoredBuiltDependencies:
+  - '@prisma/engines'
+  - esbuild
+  - prisma
+  - sharp
+
+supportedArchitectures:
+  os:
+    - linux
+    - darwin
+  cpu:
+    - arm64
+    - x64

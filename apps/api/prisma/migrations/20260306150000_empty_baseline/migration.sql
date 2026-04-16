@@ -1,0 +1,1 @@
+-- Empty baseline migration. Intentionally no schema changes yet.

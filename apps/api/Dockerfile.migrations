@@ -1,0 +1,18 @@
+FROM node:24-alpine
+
+WORKDIR /usr/src/app
+
+RUN corepack enable
+
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY apps/api/package.json apps/api/package.json
+
+ENV CI=true
+
+RUN pnpm install --filter api --frozen-lockfile
+
+COPY . .
+
+RUN pnpm --dir apps/api prisma:generate
+
+CMD ["pnpm", "--dir", "apps/api", "prisma:migrate"]

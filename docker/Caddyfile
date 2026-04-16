@@ -1,0 +1,11 @@
+{
+  email {$CADDY_ACME_EMAIL}
+}
+
+{$WEB_DOMAIN} {
+  reverse_proxy app_web:{$WEB_PORT}
+}
+
+{$API_DOMAIN} {
+  reverse_proxy app_api:{$API_PORT}
+}
